@@ -56,5 +56,10 @@ export DISPLAY=:1
 vncserver :1 -geometry 1600x900 -depth 24
 startlxde &
 
+# open URL if declared env var URL_TO_OPEN
+if [ -n "${URL_TO_OPEN}" ]; then
+	firefox $URL_TO_OPEN &
+fi
+
 # Start websockify to connect VNC server to novnc
 exec websockify --web=/usr/share/novnc/ ${SSLARG} 8080 "${VNCADDR}"

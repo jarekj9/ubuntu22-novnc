@@ -61,5 +61,8 @@ if [ -n "${URL_TO_OPEN}" ]; then
 	firefox $URL_TO_OPEN &
 fi
 
+# start caddy
+caddy start -c /etc/caddy/Caddyfile
+
 # Start websockify to connect VNC server to novnc
 exec websockify --web=/usr/share/novnc/ ${SSLARG} 8080 "${VNCADDR}"

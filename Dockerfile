@@ -5,8 +5,7 @@ ENV LANG C
 ENV VNCADDR 127.0.0.1:5901
 ENV VNCPASS password
 
-COPY app/app.sh /app/
-COPY app/install_firefox.sh /app/
+COPY app/ /app/
 COPY noVNC/index.html /usr/share/novnc/
 
 # fonts are required for novnc, lxde for GUI, autocutsel for vnc clipboard

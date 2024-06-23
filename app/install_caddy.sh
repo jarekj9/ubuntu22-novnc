@@ -20,18 +20,17 @@ cat <<EOF> /etc/caddy/Caddyfile
         }
         level INFO                 # Set the log level (INFO, DEBUG, ERROR, etc.)
     }
+    on_demand_tls {
+		ask http://localhost:8080
+	}
 }
-:443 {
-tls internal
-
-@websockets {
-    header Connection *Upgrade*
-    header Upgrade    websocket
-}
-reverse_proxy @websockets http://localhost:8080
-
-reverse_proxy http://localhost:8080
-
+https:// {
+    @websockets {
+        header Connection *Upgrade*
+        header Upgrade    websocket
+    }
+    reverse_proxy @websockets http://localhost:8080
+    reverse_proxy http://localhost:8080
     tls {
         on_demand
     }

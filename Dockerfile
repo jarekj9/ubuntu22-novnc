@@ -4,6 +4,7 @@ ARG DEBIAN_FRONTEND=noninteractive
 ENV LANG C
 ENV VNCADDR 127.0.0.1:5901
 ENV VNCPASS password
+ENV MAXMINUTES 0
 
 COPY app/ /app/
 COPY noVNC/index.html /usr/share/novnc/

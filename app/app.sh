@@ -64,5 +64,8 @@ fi
 # start caddy
 caddy start -c /etc/caddy/Caddyfile
 
+# set start time for timer in novnc
+if [ $MAXMINUTES -ne 0 ]; then sh /app/add_novnc_timer.sh; fi
+
 # Start websockify to connect VNC server to novnc
 exec websockify --web=/usr/share/novnc/ ${SSLARG} 8080 "${VNCADDR}"

@@ -12,7 +12,7 @@ docker run --rm -e VNCPASS=yourpassword -p 8080:8080 jarekj9/ubuntu22novnc
 docker run --rm -e VNCPASS=yourpassword -e URL_TO_OPEN=https://github.com -p 8080:8080 jarekj9/ubuntu22novnc
 ```
 
-
+```
 +--------------------------------------------------------------------------------------------------+
 |                                                                                                  |
 | TCP-443 - HTTPS                                                                                  |
@@ -26,3 +26,4 @@ docker run --rm -e VNCPASS=yourpassword -e URL_TO_OPEN=https://github.com -p 808
 |                                                                                                  |
 |                                                                                                  |
 +--------------------------------------------------------------------------------------------------+
+```

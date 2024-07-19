@@ -8,9 +8,6 @@ It can also open defined URL in firefox upon startup.
 
 ## Run the image
 noVNC will listen on port 8080 inside the container.
-```
-
-```
 
 
 # branch with_caddy_https:

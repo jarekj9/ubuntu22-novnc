@@ -6,6 +6,6 @@ sed -i '/<script type="module" crossorigin="anonymous" src="app\/ui.js"><\/scrip
 # adds timer.html after <body> in /usr/share/novnc/vnc.html
 sed -i '/<body>/r /app/timer.html' /usr/share/novnc/vnc.html
 
-# sets correct stop time in added countdown javascript in /usr/share/novnc/vnc.html
-zuludate=$(date -u -d "+$MAXMINUTES minutes" +"%Y-%m-%dT%H:%M:%SZ")
-sed -i "s/2024-01-01T10:00:00Z/$zuludate/" /usr/share/novnc/vnc.html
+# sets correct stop time in previously added countdown javascript in /usr/share/novnc/vnc.html
+date_plus_maxminutes=$(date -u -d "+$MAXMINUTES minutes" +"%Y-%m-%dT%H:%M:%SZ")
+sed -i "s/2024-01-01T10:00:00Z/$date_plus_maxminutes/" /usr/share/novnc/vnc.html

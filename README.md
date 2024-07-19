@@ -55,3 +55,8 @@ docker run --rm -e VNCPASS=yourpassword -e URL_TO_OPEN=https://github.com -p 808
  └──────────────────────────────────────────────────────────────────────────────────────────────────┘                                                                                                  
                                                                                                         
 ```
+
+## Parameters - env variables:
+- VNCPASS - password required to access novnc
+- URL_TO_OPEN - this url will be opened in browser upon startup
+- MAXMINUTES - this will display time countdown in novnc page (to use with custom automatic container removal)
